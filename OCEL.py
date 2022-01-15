@@ -24,27 +24,25 @@ def Create_TBOX():
             domain = [el_log]
             range  = [el_event]
         class has_att(ObjectProperty):
-            domain = [el_event,el_objecttype]
+            domain = [el_event,el_object]
             range  = [el_attribute]
-        class has_object(ObjectProperty):
-            domain = [el_log]
-            range  = [el_object]
+
         class has_res(ObjectProperty):
             domain = [el_event]
             range  = [el_resource]
         class has_type(ObjectProperty):
-            domain = [el_objecttype]
+            domain = [el_object]
+            range  = [el_objecttype]
+        class has_object(ObjectProperty):
+            domain = [el_event]
             range  = [el_object]
         class has_objecttype(ObjectProperty):
-            domain = [el_event]
+            domain = [el_log]
             range  = [el_objecttype]
         class has_activity(ObjectProperty):
             domain = [el_event]
             range  = [el_activity]
         #########################DATA_PRO###########################
-        class ev_activity(DataProperty):
-            domain = [el_event]
-            range=[str]
         class act_name(DataProperty):
             domain = [el_activity]
             range=[str]
@@ -69,34 +67,35 @@ def Create_TBOX():
         class att_value(DataProperty):
             domain = [el_attribute]
             range=[str]
+    #onto.save(file = "ocel.owl", format = "rdfxml")
     return onto
 
 def CreateOnto():
     All_Object = {}
     All_Objecttype = {}
     All_Activity = {}
-    log = ocel.import_log("D:\\PHD\\py\\DataSet\\XML_OCEL_Small.xmlocel")
+    log = ocel.import_log("D:\\PHD\\py\\DataSet\\XML_OCEL.xmlocel")
     onto = Create_TBOX()
     el_l = onto.el_log("L1")
     ######################### Create Object instancess ################
     for obj in ocel.get_object_types(log):
-        obj_instance = onto.el_object()
-        obj_instance.name = obj
-        All_Object[obj] = obj_instance
+        objtype_instance = onto.el_objecttype()
+        objtype_instance.objtype_name = [obj]
+        All_Objecttype[obj] = objtype_instance
     ######################### Create Objecttype instancess ################
     obj_ins = ocel.get_objects(log)
     for obj in obj_ins:
-        objtype_instance = onto.el_objecttype()
-        objtype_instance.name = obj
-        objtype_instance.has_type.append(All_Object[obj_ins[obj]["ocel:type"]])
-        All_Objecttype[obj] = objtype_instance
+        obj_instance = onto.el_object()
+        obj_instance.obj_name = [obj]
+        obj_instance.has_type.append(All_Objecttype[obj_ins[obj]["ocel:type"]])
+        All_Object[obj] = obj_instance
 ######################### Create Objecttype attributes ################
         ovmap = obj_ins[obj]["ocel:ovmap"]
         for v in ovmap:
             el_att = onto.el_attribute()
             el_att.att_key = [v]
             el_att.att_value = [obj_ins[obj]["ocel:ovmap"][v]]
-            objtype_instance.has_att.append(el_att)
+            obj_instance.has_att.append(el_att)
 ######################### Create event instancess ################
     events = ocel.get_events(log)
     for ev in events:
@@ -111,8 +110,8 @@ def CreateOnto():
 ######################### add event objects ################
         omap = events[ev]["ocel:omap"]
         for o in omap:
-            el_instance.has_objecttype.append(All_Objecttype[o])
-######################### add object attribute(s) ################
+            el_instance.has_object.append(All_Object[o])
+######################### add event attribute(s) ################
         vmap = events[ev]["ocel:vmap"]
         for v in vmap:
             el_att = onto.el_attribute()
@@ -120,6 +119,6 @@ def CreateOnto():
             el_att.att_value = [events[ev]["ocel:vmap"][v]]
             el_instance.has_att.append(el_att)
 
-    onto.save(file = "ocel_small.owl", format = "rdfxml")
+    onto.save(file = "ocel.owl", format = "rdfxml")
 
 CreateOnto()
