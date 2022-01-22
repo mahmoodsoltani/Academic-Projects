@@ -1,0 +1,35 @@
+prefix OCEL:<http://EL.org/OCEL.owl#>
+prefix  syntax:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+select ?obj_name ?act_name  (str(?act_name3) as ?act_name2) where
+ {
+?event3 syntax:type OCEL:el_event .
+?event3  OCEL:has_activity  ?act3.
+?act3 OCEL:act_name  ?act_name3.
+?event3  OCEL:ev_timestamp  ?time.
+
+{select  (str(?obj_name) as ?obj_name)  ( str(?act_name) as ?act_name)  (min(?time2) as ?time)
+{
+?event syntax:type OCEL:el_event .
+?event  OCEL:has_activity  ?act.
+?act OCEL:act_name  ?act_name.
+?event  OCEL:ev_timestamp  ?time.
+?event OCEL:has_object  ?obj.
+?obj OCEL:has_type ?ty.
+?obj OCEL:obj_name ?obj_name.
+?ty OCEL:objtype_name "items"^^<http://www.w3.org/2001/XMLSchema#string>.
+
+?event2 syntax:type OCEL:el_event .
+?event2  OCEL:has_activity  ?act2.
+?act2 OCEL:act_name  ?act_name2.
+?event2  OCEL:ev_timestamp  ?time2.
+?event2 OCEL:has_object  ?obj.
+
+
+filter (?time < ?time2 )
+}
+group by ?obj_name ?act_name
+order by str(?obj_name) , ?time
+limit 10
+} 
+}

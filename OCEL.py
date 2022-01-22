@@ -106,7 +106,7 @@ def CreateOnto():
             el_act.act_name = [events[ev]["ocel:activity"]]
             All_Activity[events[ev]["ocel:activity"]] = el_act
         el_instance.has_activity.append(All_Activity[events[ev]["ocel:activity"]])
-        el_instance.ev_timestamp = [events[ev]["ocel:timestamp"]]
+        el_instance.ev_timestamp = [str(events[ev]["ocel:timestamp"])]
 ######################### add event objects ################
         omap = events[ev]["ocel:omap"]
         for o in omap:
@@ -119,6 +119,6 @@ def CreateOnto():
             el_att.att_value = [events[ev]["ocel:vmap"][v]]
             el_instance.has_att.append(el_att)
 
-    onto.save(file = "ocel.owl", format = "rdfxml")
+    onto.save(file = "ocelrepairedtime.owl", format = "rdfxml")
 
 CreateOnto()
