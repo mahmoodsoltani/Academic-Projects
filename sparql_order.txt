@@ -1,14 +1,17 @@
 prefix OCEL:<http://EL.org/OCEL.owl#>
 prefix  syntax:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-select ?obj_name ?act_name  (str(?act_name3) as ?act_name2) where
+select distinct  ?obj_name ?act_name  (str(?act_name3) as ?act_name3) where
  {
 ?event3 syntax:type OCEL:el_event .
 ?event3  OCEL:has_activity  ?act3.
 ?act3 OCEL:act_name  ?act_name3.
 ?event3  OCEL:ev_timestamp  ?time.
+?event3 OCEL:has_object  ?obj.
+?obj OCEL:obj_name ?obj_name.
 
-{select  (str(?obj_name) as ?obj_name)  ( str(?act_name) as ?act_name)  (min(?time2) as ?time)
+
+{select  ?obj_name  ( str(?act_name) as ?act_name)  (min(?time2) as ?time)
 {
 ?event syntax:type OCEL:el_event .
 ?event  OCEL:has_activity  ?act.
@@ -29,7 +32,77 @@ select ?obj_name ?act_name  (str(?act_name3) as ?act_name2) where
 filter (?time < ?time2 )
 }
 group by ?obj_name ?act_name
-order by str(?obj_name) , ?time
+order by str(?obj_name)  ?act_name ?time
 limit 10
 } 
 }
+order by str(?obj_name)  ?act_name
+# تمام بعدی ها
+prefix OCEL:<http://EL.org/OCEL.owl#>
+prefix  syntax:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select  (str(?obj_name) as ?obj_name)  (str(?act_name) as ?act_name)   ( str(?act_name2) as ?act_name2)  (str(?time2) as ?time)
+where
+{
+?event syntax:type OCEL:el_event .
+?event  OCEL:has_activity  ?act.
+?act OCEL:act_name  ?act_name.
+?event  OCEL:ev_timestamp  ?time.
+?event OCEL:has_object  ?obj.
+?obj OCEL:has_type ?ty.
+?obj OCEL:obj_name ?obj_name.
+?ty OCEL:objtype_name "items"^^<http://www.w3.org/2001/XMLSchema#string>.
+
+?event2 syntax:type OCEL:el_event .
+?event2  OCEL:has_activity  ?act2.
+?act2 OCEL:act_name  ?act_name2.
+?event2  OCEL:ev_timestamp  ?time2.
+?event2 OCEL:has_object  ?obj.
+filter (?time < ?time2 )
+}
+order by str(?obj_name) str(?act_name) ?time ?time2
+limit 36
+
+# فقط اولین بعدی به همراه تعداد
+prefix OCEL:<http://EL.org/OCEL.owl#>
+prefix  syntax:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+select ?first_act  ?second_act  (count(*) as ?c)
+ where {
+select ?obj_name ?act_name as ?first_act (str(?act_name3) as ?second_act ) where
+ {
+?event3 syntax:type OCEL:el_event;
+             OCEL:has_activity  ?act3;
+             OCEL:ev_timestamp  ?time;
+             OCEL:has_object  ?obj.
+?act3 OCEL:act_name  ?act_name3.
+?obj OCEL:obj_name ?obj_name.
+
+{select  ?obj_name  ( str(?act_name) as ?act_name)  (min(?time2) as ?time)
+{
+?event syntax:type OCEL:el_event ;
+OCEL:has_activity  ?act;
+OCEL:ev_timestamp  ?time;
+OCEL:has_object  ?obj.
+?act OCEL:act_name  ?act_name.
+
+?obj OCEL:has_type ?ty;
+ OCEL:obj_name ?obj_name.
+?ty OCEL:objtype_name "items"^^<http://www.w3.org/2001/XMLSchema#string>.
+
+?event2 syntax:type OCEL:el_event ;
+OCEL:has_activity  ?act2;
+OCEL:ev_timestamp  ?time2;
+OCEL:has_object  ?obj.
+?act2 OCEL:act_name  ?act_name2.
+
+
+
+filter (?time < ?time2 )
+}
+group by ?obj_name ?act_name
+order by str(?obj_name)  ?act_name ?time
+} 
+}
+order by str(?obj_name)  ?act_name
+} group by ?first_act  ?second_act
+having ( count(*) >1000)
