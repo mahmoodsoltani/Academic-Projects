@@ -1,0 +1,35 @@
+prefix OCEL:<http://EL.org/OCEL.owl#>
+prefix  syntax:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+select fn:concat( (str(?obj_name) as ?obj_name) ,',', (str(?act_name) as ?act_name) ,',',?time)
+{
+?event syntax:type OCEL:el_event .
+?event  OCEL:has_activity  ?act.
+?act OCEL:act_name  ?act_name.
+?event  OCEL:ev_timestamp  ?time.
+?event OCEL:has_object  ?obj.
+?obj OCEL:has_type ?ty.
+?obj OCEL:obj_name ?obj_name.
+?ty OCEL:objtype_name "items"^^<http://www.w3.org/2001/XMLSchema#string>.
+
+}
+order by str(?obj_name) , ?time
+limit 205
+
+
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+http://EL.org/OCEL.owl#ev_timestamp
+http://EL.org/OCEL.owl#has_activity
+http://EL.org/OCEL.owl#has_att
+http://EL.org/OCEL.owl#has_object
+
+
+# activity
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+http://EL.org/OCEL.owl#act_name
+}
+
+# objet
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+http://EL.org/OCEL.owl#has_att
+http://EL.org/OCEL.owl#has_type
+http://EL.org/OCEL.owl#obj_name

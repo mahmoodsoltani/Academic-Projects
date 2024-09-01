@@ -1,0 +1,34 @@
+Authors
+{
+   "FullName": "",
+    "H-index": "",
+    "TotalCitation": "",
+    "Uni/Org":"",
+    "field_of_interest":[
+            "name":""
+    ],
+    "Url":"",
+}
+Journals
+{
+    "Name": "",
+    "IF": "",
+    "Number_of_article": "",
+    "Url":"",
+}
+Articles
+{
+    "Authors": [
+        {
+            "FirstName": "",
+            "LastName": "",
+            "H_Index":""
+        }
+    ],
+    "type": "",#Chapter,conferences,journal,book,....
+    "Title":"",
+    "Year":"",
+    "Loc":"",
+    "DOI":"",
+    "Pages":""
+}
