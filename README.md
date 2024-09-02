@@ -20,4 +20,4 @@ This repository contains a collection of my academic projects, showcasing a rang
 3. **Itemset Mining**
    - **Description**: In this project, we extended the SPMF library by implementing new features and enhancing existing algorithms for itemset mining. These enhancements improve the efficiency , enabling more effective pattern discovery in large datasets. The project also involved testing the modified algorithms on various datasets to evaluate their performance.
    - **Technologies Used**: Java, SPMF Library, Data Mining
-   - **Link**: [Link to project directory or file]
+   - **Link**: [[HERE]](https://github.com/mahmoodsoltani/Academic-Projects/tree/master/Itemset%20Mining)
