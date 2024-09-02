@@ -1,0 +1,102 @@
+[System]
+Name='Summ'
+Type='mamdani'
+Version=2.0
+NumInputs=7
+NumOutputs=1
+NumRules=22
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='TitleSimilarity'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.318783068783069]
+MF2='medium':'trapmf',[0.178571428571429 0.46 0.54 0.784]
+MF3='high':'trapmf',[0.643 0.919312169312169 1.04 1.36]
+
+[Input2]
+Name='Length'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='medium':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Input3]
+Name='WordWeight'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='medium':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Input4]
+Name='Position'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='medium':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Input5]
+Name='ImportantPhrase'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='medium':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Input6]
+Name='NumericWords'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='medium':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Input7]
+Name='NamedEntity'
+Range=[0 1]
+NumMFs=3
+MF1='low':'trimf',[-0.4 0 0.4]
+MF2='medium':'trimf',[0.1 0.5 0.9]
+MF3='high':'trimf',[0.6 1 1.4]
+
+[Output1]
+Name='SentenceImportance'
+Range=[0 1]
+NumMFs=5
+MF1='VBad':'trimf',[-0.408 -0.00794 0.292328042328042]
+MF2='VGood':'trimf',[0.705026455026455 1 1.4]
+MF3='Bad':'trapmf',[0 0.204 0.304 0.456349206349206]
+MF4='Medium':'trapmf',[0.202380952380952 0.434 0.534 0.934]
+MF5='Good':'trapmf',[0.552 0.654 0.754 1]
+
+[Rules]
+1 0 0 0 0 0 0, 3 (1) : 1
+2 0 0 0 0 0 0, 5 (1) : 2
+3 0 0 0 0 0 0, 5 (1) : 2
+0 1 0 0 0 0 0, 3 (1) : 2
+0 2 0 0 0 0 0, 2 (1) : 2
+0 3 0 0 0 0 0, 5 (1) : 2
+0 0 1 0 0 0 0, 1 (1) : 2
+0 0 2 0 0 0 0, 4 (1) : 2
+0 0 3 0 0 0 0, 2 (1) : 2
+0 0 0 1 0 0 0, 2 (1) : 2
+0 0 0 2 0 0 0, 4 (1) : 2
+0 0 0 3 0 0 0, 5 (1) : 2
+0 0 0 0 1 0 0, 3 (1) : 2
+0 0 0 0 2 0 0, 4 (1) : 2
+0 0 0 0 3 0 0, 5 (1) : 2
+0 0 0 0 0 1 0, 3 (1) : 2
+0 0 0 0 0 2 0, 4 (1) : 2
+0 0 0 0 0 3 0, 5 (1) : 2
+0 0 0 0 0 0 1, 1 (1) : 2
+0 0 0 0 0 0 2, 5 (1) : 2
+0 0 0 0 0 0 3, 2 (1) : 2
+3 0 0 0 0 0 1, 2 (1) : 1

@@ -1,0 +1,16 @@
+F:\Documents\azad Proposal & hosein's work\old\Summerizer Proj\Summarization\Fuzzy\bin\MyLib.Fuzzy.dll
+F:\Documents\azad Proposal & hosein's work\old\Summerizer Proj\Summarization\Fuzzy\bin\MyLib.Fuzzy.pdb
+F:\Documents\azad Proposal & hosein's work\old\Summerizer Proj\Summarization\Fuzzy\obj\Debug\Fuzzy.csprojResolveAssemblyReference.cache
+F:\Documents\azad Proposal & hosein's work\old\Summerizer Proj\Summarization\Fuzzy\obj\Debug\MyLib.Fuzzy.dll
+F:\Documents\azad Proposal & hosein's work\old\Summerizer Proj\Summarization\Fuzzy\obj\Debug\MyLib.Fuzzy.pdb
+C:\Users\Qiet\Desktop\Summarization\Summarization Program\Summarization\Fuzzy\bin\MyLib.Fuzzy.dll
+C:\Users\Qiet\Desktop\Summarization\Summarization Program\Summarization\Fuzzy\bin\MyLib.Fuzzy.pdb
+C:\Users\Qiet\Desktop\Summarization\Summarization Program\Summarization\Fuzzy\bin\MyLib.Fuzzy.dll.CodeAnalysisLog.xml
+C:\Users\Qiet\Desktop\Summarization\Summarization Program\Summarization\Fuzzy\bin\MyLib.Fuzzy.dll.lastcodeanalysissucceeded
+C:\Users\Qiet\Desktop\Summarization\Summarization Program\Summarization\Fuzzy\obj\Debug\MyLib.Fuzzy.dll
+C:\Users\Qiet\Desktop\Summarization\Summarization Program\Summarization\Fuzzy\obj\Debug\MyLib.Fuzzy.pdb
+D:\OldDesk\Summarization\Summarization Program\Summarization\Fuzzy\bin\MyLib.Fuzzy.dll
+D:\OldDesk\Summarization\Summarization Program\Summarization\Fuzzy\bin\MyLib.Fuzzy.pdb
+D:\OldDesk\Summarization\Summarization Program\Summarization\Fuzzy\obj\Debug\Fuzzy.csprojResolveAssemblyReference.cache
+D:\OldDesk\Summarization\Summarization Program\Summarization\Fuzzy\obj\Debug\MyLib.Fuzzy.dll
+D:\OldDesk\Summarization\Summarization Program\Summarization\Fuzzy\obj\Debug\MyLib.Fuzzy.pdb
