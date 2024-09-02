@@ -10,7 +10,7 @@
 
 ## Overview
 
-This repository contains a collection of my academic projects, showcasing a range of skills and technologies I've learned and applied throughout my studies. Each project highlights different aspects of my academic journey, from foundational concepts to advanced applications.
+This repository contains a collection of my key academic projects out of over ten projects, showcasing a range of skills and technologies I've learned and applied throughout my studies. Each project highlights different aspects of my academic journey, from foundational concepts to advanced applications.
 
 ## Projects List
 
