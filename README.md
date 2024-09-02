@@ -9,5 +9,5 @@ This repository contains a collection of my academic projects, showcasing a rang
 1. **[Project 1: Eventlog to RDF]**
   - **Description**: This project involves converting an Object-Centric Event Log (OCEL) into the Web Ontology Language (OWL). The purpose of this project is to facilitate process mining by leveraging OWL to represent the event log data in a structured and semantically rich format. This conversion allows for more effective querying and analysis of process data.
    - **Technologies Used**: Python, SPARQL, OWLready2, OCEL
-     - **Link**: [Link to project directory or file]
+     - **Link**: [[Link to project directory or file]](https://github.com/mahmoodsoltani/Academic-Projects/tree/master/Eventlog_to_RDF_Convertor/DataSet)
 
