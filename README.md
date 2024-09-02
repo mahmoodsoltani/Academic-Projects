@@ -2,9 +2,9 @@
 # Project Badges
 
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
-![Keras](https://img.shields.io/badge/Keras-2.4.3-red)
+![C#](https://img.shields.io/badge/c#-red)
 ![Java](https://img.shields.io/badge/Java-1.8-blue)
-![SPMF Library](https://img.shields.io/badge/SPMF-Extension-green)
+
 
 
 
