@@ -1,4 +1,27 @@
 # Academic Projects Repository
+# Project Badges
+
+### General Badges
+![Python](https://img.shields.io/badge/Python-3.8-blue)
+![Keras](https://img.shields.io/badge/Keras-2.4.3-red)
+![Java](https://img.shields.io/badge/Java-1.8-blue)
+![SPMF Library](https://img.shields.io/badge/SPMF-Extension-green)
+
+### Specific Project Badges
+
+#### Project 1: OCEL to OWL Converter for Process Mining
+![OCEL](https://img.shields.io/badge/OCEL-Event%20Logs-brightgreen)
+![OWLready2](https://img.shields.io/badge/OWLready2-Web%20Ontology%20Language-orange)
+![SPARQL](https://img.shields.io/badge/SPARQL-Querying-yellow)
+
+#### Project 2: News Summarizer
+![NLP](https://img.shields.io/badge/NLP-Natural%20Language%20Processing-blueviolet)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0-yellow)
+![Keras](https://img.shields.io/badge/Keras-2.4.3-red)
+
+#### Project 3: Itemset Mining Enhancements
+![Data Mining](https://img.shields.io/badge/Data%20Mining-Advanced-orange)
+![SPMF Library](https://img.shields.io/badge/SPMF-Extension-green)
 
 ## Overview
 
