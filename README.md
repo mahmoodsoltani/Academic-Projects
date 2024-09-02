@@ -7,7 +7,7 @@ This repository contains a collection of my academic projects, showcasing a rang
 ## Projects List
 
 1. **[Project 1: Eventlog to RDF]**
-   - **Description**: Briefly describe the project, its purpose, and what you learned.
-   - **Technologies Used**: List the key technologies or tools you used.
-   - **Link**: [Link to project directory or file]
+  - **Description**: This project involves converting an Object-Centric Event Log (OCEL) into the Web Ontology Language (OWL). The purpose of this project is to facilitate process mining by leveraging OWL to represent the event log data in a structured and semantically rich format. This conversion allows for more effective querying and analysis of process data.
+   - **Technologies Used**: Python, SPARQL, OWLready2, OCEL
+     - **Link**: [Link to project directory or file]
 
