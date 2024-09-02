@@ -2,7 +2,7 @@
 # Project Badges
 
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
-![C#](https://img.shields.io/badge/c#-red)
+![C#](https://img.shields.io/badge/C%23-red)
 ![Java](https://img.shields.io/badge/Java-1.8-blue)
 
 
