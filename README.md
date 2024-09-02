@@ -16,3 +16,8 @@ This repository contains a collection of my academic projects, showcasing a rang
  - **Description**: The News Summarizer project is designed to automatically generate concise summaries of news articles. Using Natural Language Processing (NLP) techniques, the project processes large volumes of text to extract key points, allowing users to quickly understand the gist of the news without reading the full article. 
  - **Technologies Used**: C#, weighted linear regression 
  - **Link**: [[HERE]](https://github.com/mahmoodsoltani/Academic-Projects/tree/master/Summarizer)
+
+3. **Itemset Mining**
+   - **Description**: In this project, we extended the SPMF library by implementing new features and enhancing existing algorithms for itemset mining. These enhancements improve the efficiency , enabling more effective pattern discovery in large datasets. The project also involved testing the modified algorithms on various datasets to evaluate their performance.
+   - **Technologies Used**: Java, SPMF Library, Data Mining
+   - **Link**: [Link to project directory or file]
