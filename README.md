@@ -20,7 +20,7 @@ This repository contains a collection of my key academic projects out of over te
 ![SPARQL](https://img.shields.io/badge/SPARQL-Querying-yellow)
     - **Description**: This project involves converting an Object-Centric Event Log (OCEL) into the Web Ontology Language (OWL). The purpose of this project is to facilitate process mining by leveraging OWL to represent the event log data in a structured and semantically rich format. This conversion allows for more effective querying and analysis of process data.
     - **Technologies Used**: Python, SPARQL, OWLready2, OCEL
-    - **Link**: [[HERE]](https://github.com/mahmoodsoltani/Academic-Projects/tree/master/Eventlog_to_RDF_Convertor)
+    - **Link**: [[HERE]](https://github.com/mahmoodsoltani/Eventlog_to_RDF_Convertor/DataSet)
 
 
 3. **News Summarizer**
